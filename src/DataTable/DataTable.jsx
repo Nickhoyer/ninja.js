@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { Pagination } from './Pagination';
+import { Pagination } from './Pagination/Pagination';
 import { Row } from './Row';
 import { Search } from './Search';
 

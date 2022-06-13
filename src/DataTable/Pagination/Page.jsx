@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 
 export const Page = ({ pageNumber, currentPageNumber, onChange }) => {
   const renderedPageNumber = pageNumber + 1;
@@ -8,18 +9,13 @@ export const Page = ({ pageNumber, currentPageNumber, onChange }) => {
     onChange(pageNumber);
   };
 
-  if (currentPageNumber === pageNumber) {
-    return (
-      <li className='page-item mr-1'>
-        <button className='page-link button-outline' onClick={click}>
-          {renderedPageNumber}
-        </button>
-      </li>
-    );
-  }
   return (
     <li className='page-item mr-1'>
-      <button className='page-link' onClick={click}>
+      <button
+        className={cx('page-link', {
+          'button-outline': currentPageNumber === pageNumber,
+        })}
+        onClick={click}>
         {renderedPageNumber}
       </button>
     </li>
